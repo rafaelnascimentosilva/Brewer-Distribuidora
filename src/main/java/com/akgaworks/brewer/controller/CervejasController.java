@@ -1,12 +1,13 @@
 package com.akgaworks.brewer.controller;
 
-import javax.naming.Binding;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.akgaworks.brewer.model.Cerveja;
 
 @Controller
@@ -18,8 +19,9 @@ public class CervejasController {
 	}
 
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
-	public String cadastar(@Valid Cerveja cerveja, BindingResult result) {
+	public String cadastar(@Valid Cerveja cerveja, BindingResult result, Model model) {
 		if (result.hasErrors()) {
+			model.addAttribute("mensagem", "Erro de menssagem");
 			System.out.println("tem erro realmente");
 		}
 		return "cerveja/CadastroCerveja";

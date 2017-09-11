@@ -5,6 +5,17 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Cerveja {
 	@NotBlank
 	private String sku;
+	private String nome;
+
+	private String descricao;
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 	public String getSku() {
 		return sku;
@@ -22,5 +33,4 @@ public class Cerveja {
 		this.nome = nome;
 	}
 
-	private String nome;
 }

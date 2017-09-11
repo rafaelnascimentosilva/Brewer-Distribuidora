@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Brewer</title>
 </head>
 <body>
 	<h1>Thymelef configurado</h1>
-	<form method="post" >
-
-		<label>SKU</label> 
-		<input type="text" name="sku"> 
-		<input type="submit"value="salvar">
+	<form method="post">
+	
+		<span th:text="${mensagem}"></span>
+		
+		 <label>SKU</label> 
+		 
+		 <input	type="text" name="sku"> 
+		 <br>
+		 
+		 <input type="text" name="nome">
+		 <br>
+		 
+		 <input type="text" name="descricao">
+		 <br>
+		 
+		 <input type="submit" value="salvar">
+		 
 	</form>
 </body>
 </html>
