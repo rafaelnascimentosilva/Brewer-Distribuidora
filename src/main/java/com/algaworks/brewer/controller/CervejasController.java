@@ -1,4 +1,4 @@
-package com.akgaworks.brewer.controller;
+package com.algaworks.brewer.controller;
 
 import javax.validation.Valid;
 
@@ -8,7 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.akgaworks.brewer.model.Cerveja;
+import com.algaworks.brewer.model.Cerveja;
 
 @Controller
 public class CervejasController {

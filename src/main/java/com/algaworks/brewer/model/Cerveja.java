@@ -1,4 +1,4 @@
-package com.akgaworks.brewer.model;
+package com.algaworks.brewer.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 
