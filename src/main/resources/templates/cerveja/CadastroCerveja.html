@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 	<meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-	<title>Brewer</title>
+	<title>AlgaWorks</title>
 
-	<link rel="stylesheet" type="text/css" href="/brewer/layout/stylesheets/vendors.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/brewer/layout/stylesheets/algaworks.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/brewer/layout/stylesheets/application.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/vendors.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/algaworks.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/application.css}"/>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,16 +20,21 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-
 <body>
+
+<div class="aw-layout-loading  js-loading-overlay">
+	<div class="aw-layout-loading__container">
+		<span class="aw-balls-spinner">Carregando...</span>
+	</div>
+</div>
 <div class="aw-layout-page">
 	<nav class="navbar  navbar-fixed-top  navbar-default  js-sticky-reference" id="main-navbar">
 		<div class="container-fluid">
 
-	    <div class="navbar-header">
-	     	<a class="navbar-brand  hidden-xs" href="#">
-	        	<img alt="AlgaWorks" src="/brewer/images/logo.png"/>
-	      	</a>
+	     <div class="navbar-header">
+	      <a class="navbar-brand  hidden-xs" href="#">
+	        <img alt="AlgaWorks" th:src="@{/layout/images/logo.png}"/>
+	      </a>
 
 	      	<ul class="nav  navbar-nav">
 	        	<li>
@@ -146,7 +152,7 @@
 					<div class="col-sm-3  form-group">
 						<label for="teorAlcoolico">Teor alcoólico</label>
 						<div class="input-group">
-							<input id="teorAlcoolico" type="text" class="form-control"/>
+							<input id="teorAlcoolico" type="text" class="form-control js-decimal"/>
 							<div class="input-group-addon">%</div>
 						</div>
 					</div>
@@ -171,21 +177,21 @@
 						<label for="preco">Preço</label>
 						<div class="input-group">
 							<div class="input-group-addon">R$</div>
-							<input id="preco" type="text" class="form-control"/>
+							<input id="preco" type="text" class="form-control js-decimal"/>
 						</div>
 					</div>
 					
 					<div class="col-sm-3  form-group">
 						<label for="comissao">Comissão</label>
 						<div class="input-group">
-							<input id="comissao" type="text" class="form-control"/>
+							<input id="comissao" type="text" class="form-control js-decimal"/>
 							<div class="input-group-addon">%</div>
 						</div>
 					</div>
 					
 					<div class="col-sm-3  form-group">
 						<label for="estoque">Estoque</label>
-						<input id="estoque" type="text" class="form-control"/>
+						<input id="estoque" type="text" class="form-control js-decimal"/>
 					</div>
 				</div>
 				
@@ -202,9 +208,44 @@
 			<span class="aw-footer-disclaimer">&copy; 2016 AlgaWorks. Todos os direitos reservados.</span>
 		</div>
 	</footer>
+
 </div>
 
-<script src="/brewer/layout/javascripts/vendors.min.js"></script>
-<script src="/brewer/layout/javascripts/algaworks.min.js"></script>
+<div class="aw-search-modal  js-search-modal">
+	<form action="#" class="aw-search-modal__form">
+		<input class="aw-search-modal__input  js-search-modal-input" type="text" placeholder="O que você está procurando?"/>
+		<div class="aw-search-modal__input-icon">
+			<i class="glyphicon  glyphicon-search  js-search-modal-go"></i>
+		</div>
+	</form>
+	
+	<div class="aw-search-modal__controls">
+		<i class="glyphicon glyphicon-remove  js-search-modal-close"></i>
+	</div>
+</div>
+
+<script th:src="@{/layout/javascripts/vendors.min.js}"></script>
+<script th:src="@{/layout/javascripts/algaworks.min.js}"></script>
+<script th:src="@{/javascripts/vendors/jquery.maskMoney.min.js}"></script>
+<script th:src="@{/javascripts/brewer.js}"></script>
+
+<script>
+function excluir() {
+	swal({
+		title: "Tem certeza?",
+		text: "Você não poderá recuperar o produto após a exclusão.",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "Sim, exclua agora!",
+		closeOnConfirm: false,
+		showLoaderOnConfirm: true
+	}, function() {
+		setTimeout(function() {
+			swal("Excluído!", "O produto foi excluído com sucesso.", "success");
+		}, 2000);
+	});
+}
+</script>
 </body>
 </html>

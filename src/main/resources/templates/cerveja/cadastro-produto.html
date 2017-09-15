@@ -190,24 +190,6 @@
 	</form>
 </div>
 
-<script>
-function excluir() {
-	swal({
-		title: "Tem certeza?",
-		text: "Você não poderá recuperar o produto após a exclusão.",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#DD6B55",
-		confirmButtonText: "Sim, exclua agora!",
-		closeOnConfirm: false,
-		showLoaderOnConfirm: true
-	}, function() {
-		setTimeout(function() {
-			swal("Excluído!", "O produto foi excluído com sucesso.", "success");
-		}, 2000);
-	});
-}
-</script>
 
 	</section>
 	
@@ -233,7 +215,9 @@ function excluir() {
 </div>
 
 <script th:src="@{/layout/javascripts/vendors.min.js}"></script>
-<script src="@{/layout/javascripts/algaworks.min.js}"></script>
+<script th:src="@{/layout/javascripts/algaworks.min.js}"></script>
+<script th:src="@{/javascripts/vendors/jquery.maskMoney.min.js}"></script>
+<script th:src="@{/javascripts/brewer.js}"></script>
 
 </body>
 </html>
