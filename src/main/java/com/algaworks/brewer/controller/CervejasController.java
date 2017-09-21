@@ -27,8 +27,8 @@ public class CervejasController {
 		return "cerveja/CadastroCerveja";
 	}
 	
-	@RequestMapping("cervejas/cadastro")
+	@RequestMapping("layout/index")
 	public String cadastro() {
-		return "cerveja/CadastroCerveja";
+		return "layout/LayoutPadrao";
 	}
 }
