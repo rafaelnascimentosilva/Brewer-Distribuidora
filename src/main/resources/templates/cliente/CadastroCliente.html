@@ -45,8 +45,8 @@
 
 					<div class="row">
 						<div class="col-lg-9 col-sm-9 form-group">
-							<label for="nome">Nome</label> <input id="nome" type="text"
-								class="form-control" />
+							<label for="nome">Nome</label> 
+							<input id="nome" type="text" class="form-control" />
 						</div>
 					</div>
 
@@ -68,73 +68,73 @@
 								type="text" class="form-control" />
 						</div>
 
-
 					</div>
 
+					<div class="row">
+						<div class="col-sm-3 form-group">
+							<label for="telefone">Telefone</label>
+							<input id="telefone" type="text" class="form-control">						
+						</div>					
+						
+						<div class="col-sm-6 form-group">
+							<label for="email">E-mail</label>
+							<input id="email" type="text" class="form-control">						
+						</div>					
+					</div>
+					
+						<div class="row">
+						<div class="col-sm-3 form-group">
+							<label for="logradouro">Logradouro</label>
+							<input id="logradouro" type="text" class="form-control">						
+						</div>					
+						
+						<div class="col-sm-3 form-group">
+							<label for="numero">Número</label>
+							<input id="numero" type="text" class="form-control">						
+						</div>	
+						
+						<div class="col-sm-3 form-group">
+							<label for="Complemento">Complemento</label>
+							<input id="Complemento" type="text" class="form-control">						
+						</div>	
+										
+					</div>
+					
 
 					<div class="row">
-
+					<div class="col-sm-3 form-group">
+						<label for="cep"> CEP</label>
+						<input id="cep" type="text" class="form-control">
+					</div>
+												
+							
 						<div class="col-sm-3  form-group">
 
-							<label for="estilo">Estilo</label>
+							<label for="estilo">Estado</label>
 
 							<div class="bw-field-action ">
 
-								<select id="estilo" class="form-control">
-									<option value="">Selecione o estilo</option>
-									<option value="1">Pale lager</option>
-								</select>
-								<div class="bw-field-action__icon">
-									<a href="#" data-toggle="modal"
-										data-target="#modalCadastroRapidoEstilo"> <i
-										class="glyphicon glyphicon-plus-sign bw-glyphicon-large"></i>
-									</a>
-								</div>
+								<select id="estado" class="form-control">
+									<option value="">Selecione o Estado</option>
+									<option value="1">Acre</option>
+									<option value="2">Bahia</option>
+									<option value="3">Ceará</option>
+									<option value="4">Maranhão</option>
+								</select>								
 							</div>
 						</div>
 
 						<div class="col-sm-3  form-group">
-							<label for="sabor">Sabor</label> <select id="sabor"
-								class="form-control">
-								<option value="">Selecione o sabor</option>
-								<option value="1">Adocicada</option>
+							<label for="cidade">Cidade</label>
+							<select id="cidade"	class="form-control">
+								<option value="">Selecione a Cidade</option>
+								<option value="1">Rio Branco</option>
+								<option value="2">Fortaleza</option>
 							</select>
 						</div>
 
-						<div class="col-sm-3  form-group">
-							<label for="teorAlcoolico">Teor alcoólico</label>
-							<div class="input-group">
-								<input id="teorAlcoolico" type="text"
-									class="form-control js-plain" />
-								<div class="input-group-addon">%</div>
-							</div>
-						</div>
-
-
 					</div>
 
-					<div class="row">
-						<div class="col-sm-3  form-group">
-							<label for="preco">Preço</label>
-							<div class="input-group">
-								<div class="input-group-addon">R$</div>
-								<input id="preco" type="text" class="form-control js-decimal" />
-							</div>
-						</div>
-
-						<div class="col-sm-3  form-group">
-							<label for="comissao">Comissão</label>
-							<div class="input-group">
-								<input id="comissao" type="text" class="form-control js-decimal" />
-								<div class="input-group-addon">%</div>
-							</div>
-						</div>
-
-						<div class="col-sm-3  form-group">
-							<label for="estoque">Estoque</label> <input id="estoque"
-								type="text" class="form-control js-plain" />
-						</div>
-					</div>
 
 					<div class="form-group">
 						<button class="btn  btn-primary" type="submit">Salvar</button>
@@ -142,7 +142,7 @@
 
 				</form>
 			</div>
-			<div th:replace="estilo/CadastroRapidoEstilo :: modal"></div>
+			
 		</section>
 
 
