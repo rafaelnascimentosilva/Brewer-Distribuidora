@@ -21,7 +21,6 @@ import com.algaworks.brewer.controller.CervejasController;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
-// @ComponentScan("com.algaworks.brewer.controller") /*má prática*/
 @Configuration
 @ComponentScan(basePackageClasses = { CervejasController.class })
 @EnableWebMvc
@@ -38,15 +37,16 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 	public ViewResolver viewResolver() {
 		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
 		resolver.setTemplateEngine(templateEngine());
-		
+		resolver.setCharacterEncoding("UTF-8");
 		return resolver;
 	}
-//
+
 	@Bean
 	public TemplateEngine templateEngine() {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setEnableSpringELCompiler(true);
 		engine.setTemplateResolver(templateResolver());
+		
 		engine.addDialect(new LayoutDialect());
 		return engine;
 	}
@@ -54,14 +54,13 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 	private ITemplateResolver templateResolver() {
 		SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
 		resolver.setApplicationContext(applicationContext);
-		
 		resolver.setPrefix("classpath:/templates/");
 		resolver.setSuffix(".html");
-		resolver.setCharacterEncoding("UTF-8");
 		resolver.setTemplateMode(TemplateMode.HTML);
+		resolver.setCharacterEncoding("UTF-8");
 		return resolver;
 	}
-
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
