@@ -41,7 +41,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		
 		return resolver;
 	}
-
+//
 	@Bean
 	public TemplateEngine templateEngine() {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
