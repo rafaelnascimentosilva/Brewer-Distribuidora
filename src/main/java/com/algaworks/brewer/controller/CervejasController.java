@@ -15,7 +15,7 @@ public class CervejasController {
 
 	@RequestMapping("cerveja/novo")
 	public String novo() {
-		return "cerveja/CadastroCerveja";
+		return "cerveja/CadastroCerveja";	
 	}
 
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
@@ -27,7 +27,7 @@ public class CervejasController {
 		return "cerveja/CadastroCerveja";
 	}
 	
-	@RequestMapping("layout/index")
+	
 	public String cadastro() {
 		return "layout/LayoutPadrao";
 	}
